@@ -6,7 +6,9 @@ env:
     - LUA="luajit 2.0"
     - LUA="luajit 2.1"
 before_install:
-  - bash .ci/setup_bcrypt.sh
+  - ls
+  - pwd
+  - bash ./.ci/setup_bcrypt.sh
   - pip install --user hererocks
   - hererocks lua_install -r^ --$LUA
   - export PATH=$PATH:$PWD/lua_install/bin
